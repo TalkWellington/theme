@@ -1,0 +1,411 @@
+/*
+ * Globals
+ */
+
+body {
+  font-size: 18px;
+/*  background-image: url("https://img.rezdy.com/PRODUCT_IMAGE/56407/Wellington_Harbour_11460_1_med.jpg"); 
+  background-size: cover;*/
+  background-color: #719ebb;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: 0;
+  font-weight: normal;
+  color: #333;
+}
+
+a{
+  color: #333;
+}
+h1, .blog-post-title {
+font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  background-color: #fff;
+}
+/*
+ * Masthead for nav
+ */
+
+.blog-masthead {
+ border-top: 2px solid black; 
+}
+
+/* Nav links */
+.blog-nav-item {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  font-weight: 500;
+}
+.blog-nav-item:hover,
+.blog-nav-item:focus {
+  text-decoration: none;
+}
+
+#menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: #FFF;
+    overflow-x: hidden;
+    transition: 0.1s;
+    padding: 60px 0 0 0;
+    text-align: justify;
+    box-shadow: inset -1px 0 0px 0px #999;
+}
+
+#menu li a:hover{
+  padding-bottom: 0.4em;
+  text-decoration: none;
+  border-bottom: 2px solid black;
+}
+
+#slide-menu-button, .fa-times{
+    width: 100%;
+    margin-right: 10px;
+    padding: 12px;
+    display: block;
+    text-align: right;
+}
+
+.mobile-head {
+  width: 100%;
+  display: inline-flex;
+}
+#hide-mobile, .mobile-head .icon .fa-search{
+  display: none;
+}
+.mobile-search{
+  width: 50%;
+  display: inline;
+}
+.mobile-search input{
+   width: 156px;
+}
+
+.menu-div{
+  width: 100%;
+}
+.text-right{
+  text-align: right;
+}
+
+.social{
+  max-width: 50%;
+}
+
+/* Active state gets a caret at the bottom */
+.blog-nav .active {
+  color: #fff;
+}
+.blog-nav .active:after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -5px;
+  vertical-align: middle;
+  content: " ";
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid;
+  border-left: 5px solid transparent;
+}
+
+
+/*
+ * Blog name and description
+ */
+
+.blog-header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.blog-title {
+  margin-top: 30px;
+  margin-bottom: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 60px;
+}
+.blog-title a:hover {
+  color: #337ab7;
+  text-decoration: none;
+}
+.blog-description {
+  font-size: 20px;
+  color: #999;
+}
+
+
+/*
+ * Main column and sidebar layout
+ */
+
+.blog-main {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.hero-feature {
+  margin-bottom: 0px;
+}
+
+
+
+/* Sidebar modules for boxing content */
+/*.sidebar-module {
+  padding: 15px;
+}*/
+.sidebar-module-inset {
+  padding-bottom: 1.5em;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  margin-bottom: 1.5em;
+}
+.sidebar-module-inset p:last-child,
+.sidebar-module-inset ul:last-child,
+.sidebar-module-inset ol:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar-module ul, .sidebar-module li {
+  list-style: none;
+  padding: 0;
+}
+
+.blog-sidebar h3, .comments-title, .comment-reply-title {
+  text-transform: uppercase;
+  padding: 0.5em;
+  text-align: center;
+  border-bottom: 2px solid #337ab7;
+  background-color: #ddd;
+}
+
+/* Pagination */
+.pager {
+  margin-bottom: 60px;
+  text-align: left;
+}
+.pager > li > a {
+  width: 140px;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 30px;
+}
+
+
+/*
+ * Blog posts
+ */
+
+.blog-post {
+  margin-bottom: 60px;
+}
+.blog-post-title {
+  margin-bottom: 5px;
+  font-size: 40px;
+}
+.blog-post-meta {
+  margin-bottom: 20px;
+  color: #999;
+}
+.blog-post-title  a:hover{
+  color: #337ab7;
+  text-decoration: none
+}
+.blog-roll{
+  margin-top: 30px; 
+}
+
+.feature-separator{
+  margin: 0px 
+}
+.post-header-image{
+  margin-bottom: 30px;
+}
+.post-header-text{
+  text-align: center;
+}
+
+.categories {
+/*  margin-top: 40px;
+*/  margin-bottom: 40px;
+  text-align: center;
+  font-style: italic;
+}
+
+/*
+ * Footer
+ */
+
+.blog-footer {
+  padding: 40px 0;
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  border-top: 1px solid #e5e5e5;
+}
+.blog-footer p:last-child {
+  margin-bottom: 0;
+}
+
+.blog-nav li {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    font-weight: 500; 
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+.banner {
+  background-size: cover;
+  background-position: center 0;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#tertiary-feature, #secondary-feature {
+  min-height: 250px;
+}
+
+/*Comments*/
+.comment-row {
+  background-color: #f5f5f5;
+}
+.comment {
+  padding: 1.4rem 0rem 0rem 1.2rem;
+  width: 100%;
+}
+.children, .comment-list {
+  padding-left: 0;
+  list-style: none;
+ }
+
+.comment-list{
+  margin-bottom: 0;
+}
+
+#comment {
+  border: 1px solid gray;
+  list-style: none;
+  width: 100%;
+}
+.comment-reply-link {
+    color: #337ab7;
+    text-transform: uppercase;
+}
+
+.form-submit {
+  text-align: right;
+}
+#submit {
+  background-color: #3F51B5;
+  color: white;
+  padding: 1rem;
+  background-color: #337ab7;
+  color: white;
+  border-radius: 35px;
+}
+
+#comments{
+  background-color: #f5f5f5;
+}
+.comments-title {
+  margin-bottom: 0;
+}
+.comment-meta {
+  margin: 0.5rem 0;
+}
+.fn {
+  font-style: normal;
+  font-weight: bold;
+}
+
+/*Respond box*/
+#respond {
+  background-color: #f5f5f5;
+}
+
+
+/*Icons*/
+.icon::before {
+  display: inline-block;
+  margin-right: .5em;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+}
+div.icon.fa-search{
+  display: inherit;
+}
+a:hover {
+    color: #337ab7;
+}
+/*Mobile First Media Queries*/
+/*AKA, these are the styles added for tablet & desktop
+*/
+
+@media (min-width: 767px) {
+  .hero-feature {
+    margin-bottom: 30px;
+  }
+  #comments {
+    float: none;
+  }
+} 
+
+@media (min-width: 991px) {
+  .blog-header{
+    padding-top: 50px;
+  }
+  #menu {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    height: auto;
+    min-width: 100%;
+    position: initial;
+    padding-top: 10px;
+    padding-right: 30px;
+    box-shadow: none;
+  }
+  .menu-div{
+    width: 50%;
+  }
+  .blog-nav li, #hide-mobile {
+    display: initial;
+    width: auto;
+  }
+  #x-button, .mobile-head {
+    display: none;
+  }
+  .fa-search:before{
+    margin-right: 0;
+  }
+  #hide-mobile form {
+    padding: 10px 0px;
+  }
+  .comment-list, #commentform {
+  padding: 0 4rem 4rem 4rem;
+ }
+  .children {
+  padding: 0 4rem;
+ }
+} 
