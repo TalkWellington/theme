@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Open+Sans:600" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:500i,400,700|Open+Sans:600" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -18,13 +18,15 @@
 	<?php wp_head();?>
 </head>
 <body>	
+<header>
 	<div class="container">
-
-		<div class="blog-header">
-			<h1 class="blog-title"><a href="<?php echo get_bloginfo( 'wpurl' );?>"><?php echo get_bloginfo( 'name' ); ?></a></h1>
-			<p class="lead blog-description"><?php echo get_bloginfo( 'description' ); ?></p>
-		</div>
-
+			<div class="blog-header">
+				<h1 class="blog-title"><a href="<?php echo get_bloginfo( 'wpurl' );?>"><?php echo get_bloginfo( 'name' ); ?></a></h1>
+				<p class="lead blog-description"><?php echo get_bloginfo( 'description' ); ?></p>
+			</div>
+	</div>		
+</header>
+<div class="container">
 		<div class="blog-masthead">
 			<div class="row">
 				<nav class="blog-nav col-sm-12">

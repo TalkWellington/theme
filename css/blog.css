@@ -6,8 +6,8 @@ body {
   font-size: 18px;
 /*  background-image: url("https://img.rezdy.com/PRODUCT_IMAGE/56407/Wellington_Harbour_11460_1_med.jpg"); 
   background-size: cover;*/
-  background-color: #719ebb;
-}
+/*  background-color: #719ebb;
+*/}
 
 h1, .h1,
 h2, .h2,
@@ -27,6 +27,9 @@ h1, .blog-post-title {
 font-family: 'Open Sans', sans-serif;
 }
 
+header {
+  border-bottom: 2px solid black;
+}
 .container {
   background-color: #fff;
 }
@@ -34,9 +37,9 @@ font-family: 'Open Sans', sans-serif;
  * Masthead for nav
  */
 
-.blog-masthead {
+/*.blog-masthead {
  border-top: 2px solid black; 
-}
+}*/
 
 /* Nav links */
 .blog-nav-item {
@@ -129,10 +132,12 @@ font-family: 'Open Sans', sans-serif;
  */
 
 .blog-header {
+  background-color: #fff;
   padding-top: 20px;
   padding-bottom: 20px;
 }
 .blog-title {
+  margin: auto;
   margin-top: 30px;
   margin-bottom: 0;
   font-family: 'Roboto', sans-serif;
