@@ -9,14 +9,14 @@
 body {
   margin: 0;
   font-size: 18px;
-  background-color: #efefef;
+  /*background-color: #efefef;*/
   font-family: 'Roboto', sans-serif;
 }
 
 
-.masthead, #menu, .blog-roll, .blog-sidebar, #head-feature-area, #secondary-feature, #tertiary-feature, .post, #respond, .comments-title {
+/*.masthead, #menu, .blog-roll, .blog-sidebar, #head-feature-area, #secondary-feature, #tertiary-feature, .post, #respond, .comments-title {
   box-shadow: 2px 2px 3px rgba(0,0,0,0.05);
-}
+}*/
 
 h1, .h1,
 h2, .h2,
@@ -148,8 +148,8 @@ input {
  * Blog name and description
  */
 .masthead {
-  height: 200px;
-  padding: 1em;
+/*  height: 200px;
+*/  padding: 1em;
 }
 .masthead img{
   height: auto;
@@ -213,7 +213,6 @@ input {
 
 .sidebar-module ul, .sidebar-module li {
   list-style: none;
-  padding: 0;
 }
 
 .latest-post, .blog-sidebar h2, .comments-title, .comment-reply-title {
@@ -276,8 +275,8 @@ input {
 .categories {
   font-family: sans-serif;
   margin-bottom: 40px;
-/*  text-align: center;
-*/  font-style: italic;
+  font-style: italic;
+  padding: 1em;
 }
 
 /*Individual post*/
@@ -447,6 +446,13 @@ a:hover, a h3:hover {
   padding: 0;
 }
 
+/*SVG logo and icons */
+
+.so-widget-sow-image-default-2b1fadbace82 .sow-image-container .so-widget-image {
+/*  width: 90%;*/
+  /*background: blue;*/
+}
+
 /*Mobile First Media Queries*/
 /*AKA, these are the styles added for tablet & desktop
 */
@@ -502,5 +508,53 @@ a:hover, a h3:hover {
   .children {
   padding: 0 4rem;
  }
+
+ .so-widget-sow-image-default-2b1fadbace82 .sow-image-container .so-widget-image {
+ /* width: 50%;*/
+  /*background: blue;*/
+}
 } 
+
+/*quad layout styles*/
+#hide {
+  display: none;
+}
+
+#head-feature-area {
+  padding-right: 0;
+  padding-left: 0;
+}
+.hero-feature {
+  margin-bottom: 0;
+}
+
+#secondary-feature, .pad-right-zero{
+  padding-right: 0;
+}
+#tertiary-feature, .pad-left-zero {
+  padding-left: 0;
+}
+.features {
+  margin-top: 1.5em;
+}
+
+.latest-post, .blog-sidebar h2, .comments-title, .comment-reply-title {
+  color: #333;
+  background: #fff;
+  border-bottom: 3px solid #337ab7;
+}
+
+#menu {
+      border-bottom: 3px solid #337ab7;
+}
+
+.sidebar-module-inset ul{
+      border-left: 3px solid #337ab7;
+      padding-left: 80px;
+}
+.sidebar-module-inset h2{
+  margin-bottom: 0;
+}
+
+
 

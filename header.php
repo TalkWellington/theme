@@ -20,8 +20,9 @@
 <body>
 <div class="container"> <!-- Container for whole page -->
 
+<div id="hide">
 	<header class="row">
-		<div class="col-sm-12">
+		<div class="col-sm-6">
 			<div class="masthead">
 				<?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('logo')) : else : ?>
                   <div class="pre-widget">
@@ -33,6 +34,10 @@
 				<!-- <h1 class="blog-title first"><a href="<?php echo get_bloginfo( 'wpurl' );?>">Talk</a></h1>
 				<h1 class="blog-title"><a href="<?php echo get_bloginfo( 'wpurl' );?>">Wellington</a></h1> -->
 				<p class="blog-description"><?php echo get_bloginfo( 'description' ); ?></p>
+			</div>
+			<div class="col-sm-6">
+				
+
 			</div>
 		</div>	
 	</header>
@@ -65,3 +70,4 @@
 		
 	</nav>
 
+</div>

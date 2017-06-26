@@ -41,7 +41,13 @@ add_action('upload_mimes', 'add_file_types_to_uploads');
 
 
 
-//Hero image widgets
+// Change default ellipses from "[...]"  to "..." in post excerpts
+function wpdocs_excerpt_more( $more ) {
+    return '...';
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+
+//Hero image and logo widgets
 if (function_exists('register_sidebar')) {
 
   register_sidebar(array(
