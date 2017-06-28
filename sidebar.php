@@ -1,3 +1,8 @@
+<!--   
+ The template for sidebar content - sidebar.php
+ 
+ The area of the page that contains comments and the comment form. -->
+
 <div class="blog-sidebar">
 	<div class="sidebar-module sidebar-module-inset">
 		<h2>Categories</h2>

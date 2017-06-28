@@ -8,11 +8,21 @@
 
 body {
   margin: 0;
-  font-size: 18px;
-  /*background-color: #efefef;*/
+  font-size: 20px;
   font-family: 'Roboto', sans-serif;
 }
 
+p {
+  line-height: 25px;
+}
+
+#logo {
+  position: absolute;
+  z-index: 9999;
+  width: 45%;
+  margin: 1.5em 0;
+  margin-left: 1em; 
+}
 
 /*.masthead, #menu, .blog-roll, .blog-sidebar, #head-feature-area, #secondary-feature, #tertiary-feature, .post, #respond, .comments-title {
   box-shadow: 2px 2px 3px rgba(0,0,0,0.05);
@@ -45,6 +55,7 @@ font-family: 'Open Sans', sans-serif;
 
 
 /* Nav links */
+
 .blog-nav-item {
   position: relative;
   display: inline-block;
@@ -218,7 +229,7 @@ input {
 .latest-post, .blog-sidebar h2, .comments-title, .comment-reply-title {
   color: #fff;
   text-transform: uppercase;
-  text-align: center;
+/*  text-align: center;*/
   letter-spacing: 3px;
   padding: 0.5em;
 /*  border-bottom: .5rem solid #e5e5e5;
@@ -293,10 +304,10 @@ input {
   list-style: inherit;
 }
 .post-header-image{
-  margin-bottom: 30px;
+  margin: 30px 0;
 }
-.post-header-text{
-  text-align: center;
+.post-header{
+  margin-bottom: 60px;
 }
 
 blockquote {
@@ -343,16 +354,9 @@ img{
 }
 
 
-.banner {
-  background-size: cover;
-  background-position: center 0;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-#tertiary-feature, #secondary-feature {
+/*#tertiary-feature, #secondary-feature {
   min-height: 250px;
-}
+}*/
 
 /*Comments*/
 /*.comment-row {
@@ -387,6 +391,7 @@ img{
   text-align: right;
 }
 #submit {
+  cursor: pointer;
   color: white;
   text-transform: uppercase;
   padding: 8px 15px;
@@ -436,22 +441,20 @@ a:hover, a h3:hover {
     color: #3f51b5;
 }
 
-.masthead, .post, .blog-roll {
-  background-color: #fff;
-}
-.blog-list, .post-body, .comment-body, .comment-form, .archive-list{
+
+.blog-list, .post-body, .comment-body, .comment-form{
   padding: 1em;
 }
+
+ul.archive-list{
+  list-style: none;
+  padding: 0;
+}
+
 .container{
   padding: 0;
 }
 
-/*SVG logo and icons */
-
-.so-widget-sow-image-default-2b1fadbace82 .sow-image-container .so-widget-image {
-/*  width: 90%;*/
-  /*background: blue;*/
-}
 
 /*Mobile First Media Queries*/
 /*AKA, these are the styles added for tablet & desktop
@@ -483,7 +486,7 @@ a:hover, a h3:hover {
     position: initial;
     padding: 0 1.5rem;
     /*padding-right: 30px;*/
-    box-shadow: 2px 2px 3px rgba(0,0,0,0.05);
+    box-shadow: none;
   }
   .menu-div{
     width: 50%;
@@ -508,22 +511,20 @@ a:hover, a h3:hover {
   .children {
   padding: 0 4rem;
  }
-
- .so-widget-sow-image-default-2b1fadbace82 .sow-image-container .so-widget-image {
- /* width: 50%;*/
-  /*background: blue;*/
-}
+/* #logo {
+  margin: 0;
+ }*/
 } 
 
-/*quad layout styles*/
+/* temp quad layout styles*/
 #hide {
   display: none;
 }
 
-#head-feature-area {
-  padding-right: 0;
+/*#head-feature-area {
+background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
   padding-left: 0;
-}
+}*/
 .hero-feature {
   margin-bottom: 0;
 }
@@ -540,12 +541,12 @@ a:hover, a h3:hover {
 
 .latest-post, .blog-sidebar h2, .comments-title, .comment-reply-title {
   color: #333;
+  color: #337ab7;
   background: #fff;
   border-bottom: 3px solid #337ab7;
 }
-
-#menu {
-      border-bottom: 3px solid #337ab7;
+.blog-post a, .blog-post-title, .blog-post-meta, .blog-post-meta a, .comment-author, .comment-meta a {
+  color: #337ab7;
 }
 
 .sidebar-module-inset ul{

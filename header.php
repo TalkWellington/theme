@@ -18,56 +18,13 @@
 	<?php wp_head();?>
 </head>
 <body>
+
 <div class="container"> <!-- Container for whole page -->
+   	<?php get_template_part('nav'); ?>     
+<!-- <div id="hide"> -->
+	<header>
+		<div class="row"> <!-- Logo and top story feature row-->
+			
 
-<div id="hide">
-	<header class="row">
-		<div class="col-sm-6">
-			<div class="masthead">
-				<?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('logo')) : else : ?>
-                  <div class="pre-widget">
-                    <p><strong>Logo Area</strong></p>
-                    <p>This panel is active and ready for you to add some widgets via the WP Admin. Generally this will be the Korero Wellington logo</p>
-                  </div><?php endif; 
-                 ?>
 
-				<!-- <h1 class="blog-title first"><a href="<?php echo get_bloginfo( 'wpurl' );?>">Talk</a></h1>
-				<h1 class="blog-title"><a href="<?php echo get_bloginfo( 'wpurl' );?>">Wellington</a></h1> -->
-				<p class="blog-description"><?php echo get_bloginfo( 'description' ); ?></p>
-			</div>
-			<div class="col-sm-6">
-				
-
-			</div>
-		</div>	
-	</header>
-
-	<nav class="row">
-		
-					<div class="blog-nav col-sm-12">
-
-						<ul id="menu">
-
-							<div class="menu-div">
-								<?php wp_list_pages('&title_li=')?>									
-							</div>
-
-							<div class="menu-div text-right"> 
-								<li class="social"><a class="icon fa-twitter" href="#" aria-hidden="true"></a>
-								<li class="social"><a class="icon fa-facebook" href="#" aria-hidden="true" ></a>
-								<li id="hide-mobile"> <div class="icon fa-search" href="#" aria-hidden="true"></div><?php get_search_form(); ?></li>
-								<li id="x-button"><div class="icon fa-times text-right" aria-hidden="true"></div>
-							</div>		
-									
-						</ul>
-
-						<div class="mobile-head">
-							<div class="mobile-search"><?php get_search_form(); ?></div>
-							<div id="slide-menu-button">MENU</div>
-						</div>
-
-					</div>
-		
-	</nav>
-
-</div>
+<!-- </div> -->
