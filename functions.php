@@ -47,6 +47,25 @@ function wpdocs_excerpt_more( $more ) {
 }
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 
+
+// Filter to let us add author's names to posts by adding a custom field "guest-author"
+
+add_filter( 'the_author', 'guest_author_name' );
+add_filter( 'get_the_author_display_name', 'guest_author_name' );
+
+function guest_author_name( $name ) {
+global $post;
+
+$author = get_post_meta( $post->ID, 'guest-author', true );
+
+if ( $author )
+$name = $author;
+
+return $name;
+}
+
+
+
 //Hero image and logo widgets
 if (function_exists('register_sidebar')) {
 
@@ -80,12 +99,22 @@ if (function_exists('register_sidebar')) {
    register_sidebar(array(
     'name' => 'Logo',
     'id'   => 'logo',
-    'description'   => 'This is the image and title above stories.',
+    'description'   => 'This is the logo',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h4>',
     'after_title'   => '</h4>'
   ));
+
+    register_sidebar(array(
+    'name' => 'Links',
+    'id'   => 'links-widget-area',
+    'description'   => 'This is the area our favourite links go.',
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>'
+  ));  
 }
 
 
@@ -124,3 +153,14 @@ function setting_twitter() { ?>
 <?php }
 
 add_action( 'admin_menu', 'custom_settings_add_menu' ); 
+
+
+//reply to comments? 
+
+// function wpse52737_enqueue_comment_reply_script() {
+//     if ( get_option( 'thread_comments' ) ) {
+//         wp_enqueue_script( 'comment_reply' );
+//     }
+// }
+// add_action( 'comment_form_before', 'wpse52737_enqueue_comment_reply_script' );
+

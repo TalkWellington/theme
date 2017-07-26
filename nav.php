@@ -1,27 +1,31 @@
 <nav>
   <div class="row">
-    <div class="blog-nav col-sm-12">
+    <div class="col-sm-12">
+
       <div id="menu">
-        <div class="menu-div">
+        <ul class="links">
           <?php wp_list_pages('&title_li=')?>
-        </div>
-        <div class="menu-div text-right">
-          <ul>
-            <li class="social">
+        </ul>
+       <!--  <div class="text-right"> -->
+          <ul class="social-search">
+            <li class="social text-right">
               <a aria-hidden="true" class="icon fa-twitter" href="#"></a>
             </li>
-            <li class="social">
+            <li class="social text-right">
               <a aria-hidden="true" class="icon fa-facebook" href="#"></a>
             </li>
-            <li id="hide-mobile">
-              <div aria-hidden="true" class="icon fa-search"></div><?php get_search_form(); ?>
+            <li>
+              <div id="hide-mobile">
+                <?php get_search_form(); ?>
+              </div>
+              <div id="x-button">
+                <div aria-hidden="true" class="icon fa-times text-right"></div>
+              </div>
             </li>
-            <li id="x-button">
-              <div aria-hidden="true" class="icon fa-times text-right"></div>
-            </li>
-          </ul>
-        </div>
+          </ul> 
+        <!-- </div> -->
       </div>
+
       <div class="mobile-head">
         <div class="mobile-search">
           <?php get_search_form(); ?>

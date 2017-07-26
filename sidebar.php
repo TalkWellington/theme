@@ -7,6 +7,7 @@
 	<div class="sidebar-module sidebar-module-inset">
 		<h2>Categories</h2>
 		<ul class="list-items categories">
+
 			<?php $category_ids = get_all_category_ids(); ?>
 			<?php
 			$args = array(
@@ -14,9 +15,29 @@
 			);
 			$categories = get_categories( $args );
 			foreach ( $categories as $category ) {
-			echo '<li><a href="' . get_category_link( $category->term_id ) . '" rel="bookmark"><i class="ss-icon" aria-hidden="true"><p>' . $category->name . '</p></i>' . '' . $category->description . '</a></li>';
+			if($category->term_id == 52){
+				echo '<li>
+				<a href="' . get_category_link( $category->term_id ) . '" rel="bookmark">
+				<div class="fa fa-bus fa-lg fa-fw  cat-icon"></div>
+				' . $category->name . '</a>
+			  	</li>';
+
+
+					
+				}
+			else {	
+			echo '<li>
+					<a href="' . get_category_link( $category->term_id ) . '" rel="bookmark">
+					<img class="cat-icon" src="https://talkwellington.org.nz/wp-content/uploads/2017/07/'.$category->term_id .'.svg " />
+					<p>' . $category->name . '</p></a>
+				  </li>';
+			//NOTE: when working locally, image src or category IDs will be different address. 
+			}	
 			}
 			?>
+
+			
+			
 		</ul>
  	</div>
 	<!-- <div class="sidebar-module sidebar-module-inset">
@@ -24,3 +45,4 @@
 		<p>Enter you email below to reviece updates.</p>	
 	</div> -->
 </div><!-- /.blog-sidebar -->
+

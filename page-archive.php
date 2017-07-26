@@ -1,5 +1,11 @@
 <?php get_header(); ?>
 </header>
+
+<?php
+/*
+Template Name: Page Archive
+*/
+?>
 <div class="container">
 	<main class="row">
 		<div class="col-sm-12">

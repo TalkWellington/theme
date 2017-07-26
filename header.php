@@ -24,7 +24,26 @@
 <!-- <div id="hide"> -->
 	<header>
 		<div class="row"> <!-- Logo and top story feature row-->
-			
+			   <div id="head-feature-area" class="col-sm-12">
+              <div id="logo">
+                <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('logo')) : else : ?>
+                    <div class="pre-widget">
+                    <p><strong>Logo Area</strong></p>
+                  <p>This panel is active and ready for you to add some widgets via the WP Admin. Generally this will be the Korero Wellington logo</p>
+                  </div>
+                <?php endif; 
+                ?>
+            </div>
+              <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('head-feature-area')) : else : ?>
+                <div class="pre-widget">
+                  <p><strong>Headline Feature Area</strong></p>
+                  <p>This panel is active and ready for you to add some widgets via the WP Admin. Generally this will be Korero Wellingtons hero image link to out latest/biggest feature story</p>
+                </div>
+              <?php endif; ?>
+     
+          </div>  
 
+        </div>
+			
 
 <!-- </div> -->

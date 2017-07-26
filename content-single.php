@@ -26,18 +26,14 @@
 	 			<div class="post-header">
 					<h2 class="blog-post-title"><?php the_title(); ?></h2>
 					<p class="blog-post-meta">
-						<a href="#"><?php the_author(); ?></a> | <?php the_date(); ?> 
+						<a href="#">by <?php the_author(); ?></a> | <?php the_date(); ?> | <?php the_category( ' / ' ); ?>
 					</p>
 				</div>	
-				<?php the_content(); ?>
+				<?php the_content(); ?> 
+				<p class="blog-post-meta tags">Tags:</p>	 <?php the_tags( '', ', ', '<br />' ); ?> 
+				 
 			</div>
 
 		</div>
-		<div class="row">
-			<div class="col-sm-10 col-sm-offset-1 categories">
-			<h3>Categorised under:</h3>
-				<p class=""><?php the_category( ' , ' ); ?></p>
-			</div>
-		</div>	
 	</div>
 </div><!-- /.blog-post -->

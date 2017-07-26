@@ -39,7 +39,15 @@
 							<div class="container">
 								<div class="row">
 									<div class="col-sm-12">
-									<?php comment_form(array('title_reply'=>'Leave a comment')); ?>
+									<?php 
+											$author = get_comment_author();
+											comment_form(array(
+												'title_reply'=>'Leave a comment',
+												'title_reply_to'=>'Replying to %s   ' ,
+												'cancel_reply_before'=> '<p class="cancel-reply">',
+												'cancel_reply_after'=> '</p>')
+														); 
+									?>
 									</div>
 								</div>
 							</div>
