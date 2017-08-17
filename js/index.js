@@ -12,4 +12,4 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		}
 	    // Should change this to a class added/removed.
 	}
-}); //DOMContentLoaded braces
+});

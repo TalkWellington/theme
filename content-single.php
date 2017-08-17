@@ -1,7 +1,4 @@
-<!--   
- The template for displaying content-single - content-single.php
- 
- The area of the page that contains comments and the comment form. -->
+<!--  The template for displaying content-single - content-single.php -->
 
 <div class="post">
 	<?php 
@@ -30,10 +27,16 @@
 					</p>
 				</div>	
 				<?php the_content(); ?> 
-				<p class="blog-post-meta tags">Tags:</p>	 <?php the_tags( '', ', ', '<br />' ); ?> 
-				 
+				<p class="blog-post-meta tags">Tags: 
+					<?php if(has_tag()) 
+							 the_tags( '', ', ', '<br />' ); 
+						else {
+							 echo "None";
+							 }	 
+					?> 
+				 </p>	
 			</div>
 
 		</div>
 	</div>
-</div><!-- /.blog-post -->
+</div>

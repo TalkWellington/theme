@@ -1,7 +1,6 @@
 <?php
 
 function kwtheme_scripts() {
-  wp_enqueue_style( 'grid', get_template_directory_uri() . '/css/grid.min.css' );
   wp_enqueue_style( 'blog', get_template_directory_uri() . '/css/blog.css' );
   wp_enqueue_script( 'sidemenu_popout', get_template_directory_uri() . '/js/index.js' );
 }
@@ -10,32 +9,32 @@ add_action( 'wp_enqueue_scripts', 'kwtheme_scripts' );
 
 add_theme_support( 'title-tag' );
 
-// Featured Image (post thumbnail) support
+// Add Featured Image (post thumbnail) support
 add_theme_support('post-thumbnails');
 
 
-// change sizes on resp imgs
+// Change sizes on responsivce images
 
 function adjust_image_sizes_attr( $sizes, $size ) {
 
-$sizes = '(max-width: 800px) 100vw, 800px';
+  $sizes = '(max-width: 800px) 100vw, 800px';
 
-return $sizes;
+  return $sizes;
 
 }
 
 add_filter( 'wp_calculate_image_sizes', 'adjust_image_sizes_attr', 10 , 2 );
 
 
-//Allow SVG upload support
+//Allow SVG media upload support
 
 function add_file_types_to_uploads($file_types){
 
-    $new_filetypes = array();
-    $new_filetypes['svg'] = 'image/svg+xml';
-    $file_types = array_merge($file_types, $new_filetypes );
+  $new_filetypes = array();
+  $new_filetypes['svg'] = 'image/svg+xml';
+  $file_types = array_merge($file_types, $new_filetypes );
 
-    return $file_types;
+  return $file_types;
 }
 add_action('upload_mimes', 'add_file_types_to_uploads');
 
@@ -43,25 +42,25 @@ add_action('upload_mimes', 'add_file_types_to_uploads');
 
 // Change default ellipses from "[...]"  to "..." in post excerpts
 function wpdocs_excerpt_more( $more ) {
-    return '...';
+  return '...';
 }
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 
 
-// Filter to let us add author's names to posts by adding a custom field "guest-author"
+// Filter to let us manually add author's names to posts by adding a custom field "guest-author" on the post menu back end.
 
 add_filter( 'the_author', 'guest_author_name' );
 add_filter( 'get_the_author_display_name', 'guest_author_name' );
 
 function guest_author_name( $name ) {
-global $post;
+  global $post;
 
-$author = get_post_meta( $post->ID, 'guest-author', true );
+  $author = get_post_meta( $post->ID, 'guest-author', true );
 
-if ( $author )
-$name = $author;
+  if ( $author )
+    $name = $author;
 
-return $name;
+  return $name;
 }
 
 
@@ -72,49 +71,41 @@ if (function_exists('register_sidebar')) {
   register_sidebar(array(
     'name' => 'Head Feature Area',
     'id'   => 'head-feature-area',
-    'description'   => 'This is the featured story area on our front page.',
+    'description'   => 'This is the hero image area on pages.',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h4>',
     'after_title'   => '</h4>'
-  ));
+    ));
   register_sidebar(array(
     'name' => 'Secondary Feature',
     'id'   => 'secondary-feature',
-    'description'   => 'This is the second, smaller featured story on our front page.',
+    'description'   => 'This is the second, smaller featured story on our pages.',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h4>',
     'after_title'   => '</h4>'
-  ));
+    ));
   register_sidebar(array(
     'name' => 'Tertiary Feature',
     'id'   => 'tertiary-feature',
-    'description'   => 'This is the third, smaller featured story on our front page.',
+    'description'   => 'This is the third, smaller featured story on our pages.',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h4>',
     'after_title'   => '</h4>'
-  ));
-   register_sidebar(array(
+    ));
+  register_sidebar(array(
     'name' => 'Logo',
     'id'   => 'logo',
-    'description'   => 'This is the logo',
+    'description'   => 'This is the logo that goes over the hero image',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h4>',
     'after_title'   => '</h4>'
-  ));
+    ));
 
-    register_sidebar(array(
-    'name' => 'Links',
-    'id'   => 'links-widget-area',
-    'description'   => 'This is the area our favourite links go.',
-    'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<h4>',
-    'after_title'   => '</h4>'
-  ));  
+
 }
 
 
@@ -127,16 +118,16 @@ function custom_settings_add_menu() {
 }
 
 function custom_settings_page() { ?>
-  <div class="wrap">
-    <h1>Custom Settings</h1>
-    <form method="post" action="options.php">
-       <?php
-           settings_fields( 'section' );
-           do_settings_sections( 'theme-options' );      
-           submit_button(); 
-       ?>          
-    </form>
-  </div>
+<div class="wrap">
+  <h1>Custom Settings</h1>
+  <form method="post" action="options.php">
+   <?php
+   settings_fields( 'section' );
+   do_settings_sections( 'theme-options' );      
+   submit_button(); 
+   ?>          
+ </form>
+</div>
 <?php }
 
 function custom_settings_page_setup() {
@@ -149,7 +140,7 @@ add_action( 'admin_init', 'custom_settings_page_setup' );
 
 // Twitter
 function setting_twitter() { ?>
-  <input type="text" name="twitter" id="twitter" value="<?php echo get_option( 'twitter' ); ?>" />
+<input type="text" name="twitter" id="twitter" value="<?php echo get_option( 'twitter' ); ?>" />
 <?php }
 
 add_action( 'admin_menu', 'custom_settings_add_menu' ); 
