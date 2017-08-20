@@ -12,7 +12,7 @@
 	<?php wp_head();?>
 </head>
 <body>
-
+<?php include_once("analyticstracking.php") ?>
   <div class="container"> <!-- Container for whole page -->
     <nav>
       <div class="row">
