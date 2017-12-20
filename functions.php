@@ -13,7 +13,7 @@ add_theme_support( 'title-tag' );
 add_theme_support('post-thumbnails');
 
 
-// Change sizes on responsivce images
+// Change sizes on responsive images
 
 function adjust_image_sizes_attr( $sizes, $size ) {
 
@@ -65,93 +65,49 @@ function guest_author_name( $name ) {
 
 
 
-//Hero image and logo widgets
+//Widget areas
 if (function_exists('register_sidebar')) {
 
   register_sidebar(array(
-    'name' => 'Head Feature Area',
-    'id'   => 'head-feature-area',
-    'description'   => 'This is the hero image area on pages.',
-    'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<h4>',
-    'after_title'   => '</h4>'
-    ));
-  register_sidebar(array(
-    'name' => 'Secondary Feature',
-    'id'   => 'secondary-feature',
-    'description'   => 'This is the second, smaller featured story on our pages.',
-    'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<h4>',
-    'after_title'   => '</h4>'
-    ));
-  register_sidebar(array(
-    'name' => 'Tertiary Feature',
-    'id'   => 'tertiary-feature',
-    'description'   => 'This is the third, smaller featured story on our pages.',
-    'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<h4>',
-    'after_title'   => '</h4>'
-    ));
-  register_sidebar(array(
     'name' => 'Logo',
     'id'   => 'logo',
-    'description'   => 'This is the logo that goes over the hero image',
+    'description'   => 'This is the logo area',
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>'
+    ));
+    register_sidebar(array(
+    'name' => 'social-sharing-widget',
+    'id'   => 'social-sharing-widget',
+    'description'   => 'This is the social-sharing-widget area',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h4>',
     'after_title'   => '</h4>'
     ));
 
+}
 
+add_filter( 'widget_tag_cloud_args', 'change_tag_cloud_font_sizes');
+/**
+ * Change the Tag Cloud's Font Sizes.
+ *
+ * @since 1.0.0
+ *
+ * @param array $args
+ *
+ * @return array
+ */
+function change_tag_cloud_font_sizes( array $args ) {
+    $args['smallest'] = '14';
+    $args['largest'] = '18';
+
+    return $args;
 }
 
 
 
 
-// Create Custom Global Settings in admin panel 
 
-function custom_settings_add_menu() {
-  add_menu_page( 'Custom Settings', 'Custom Settings', 'manage_options', 'custom-settings', 'custom_settings_page', null, 99 );
-}
-
-function custom_settings_page() { ?>
-<div class="wrap">
-  <h1>Custom Settings</h1>
-  <form method="post" action="options.php">
-   <?php
-   settings_fields( 'section' );
-   do_settings_sections( 'theme-options' );      
-   submit_button(); 
-   ?>          
- </form>
-</div>
-<?php }
-
-function custom_settings_page_setup() {
-  add_settings_section( 'section', 'All Settings', null, 'theme-options' );
-  add_settings_field( 'twitter', 'Twitter URL', 'setting_twitter', 'theme-options', 'section' );
-
-  register_setting('section', 'twitter');
-}
-add_action( 'admin_init', 'custom_settings_page_setup' );
-
-// Twitter
-function setting_twitter() { ?>
-<input type="text" name="twitter" id="twitter" value="<?php echo get_option( 'twitter' ); ?>" />
-<?php }
-
-add_action( 'admin_menu', 'custom_settings_add_menu' ); 
-
-
-//reply to comments? 
-
-// function wpse52737_enqueue_comment_reply_script() {
-//     if ( get_option( 'thread_comments' ) ) {
-//         wp_enqueue_script( 'comment_reply' );
-//     }
-// }
-// add_action( 'comment_form_before', 'wpse52737_enqueue_comment_reply_script' );
 

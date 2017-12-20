@@ -1,80 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="TalkWellington - Wellington Regional News Blog">
-	<meta name="author" content="">
-  
+
+<!-- COMMON TAGS -->
+<meta charset="utf-8">
+<title><?php if(is_single()) { 
+          the_title(); 
+        } ?> 
+        Talk Wellington - Kōrero Shaping Wellington</title>
+<!-- Search Engine -->
+<meta name="description" content="Kōrero Shaping Wellington">
+<!-- Schema.org for Google -->
+<meta itemprop="name" content="Talk Wellington">
+<meta itemprop="description" content="Kōrero Shaping Wellington">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Talk Wellington">
+<meta name="twitter:description" content="Kōrero Shaping Wellington">
+<meta name="twitter:site" content="@TalkWelly">
+<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+<meta name="og:title" content="Talk Wellington">
+<meta name="og:description" content="Kōrero Shaping Wellington">
+<meta name="og:url" content="https://www.talkwellington.org.nz">
+<meta name="og:site_name" content="Talk Wellington">
+<meta name="og:locale" content="en_NZ">
+<meta name="og:type" content="website">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
   <link href="https://fonts.googleapis.com/css?family=Montserrat:500|Raleway" rel="stylesheet">
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<?php wp_head();?>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <?php wp_head();?>
 </head>
 <body>
-<?php include_once("analyticstracking.php") ?>
-  <div class="container"> <!-- Container for whole page -->
-    <nav>
-      <div class="row">
-        <div class="col-sm-12">
+  <?php include_once("analyticstracking.php") ?> 
+  
+<nav class="container-fluid nav-bar">
 
-          <div id="menu">
-           <div id="x-button">
-                  <div aria-hidden="true" class="icon fa-times text-right"></div>
-                </div>
-            <ul class="links">
-              <?php wp_list_pages('&title_li=')?>
-            </ul>
-            <ul class="social-search">
-              <li class="social">
-                <a aria-hidden="true" class="icon fa-twitter" href="https://twitter.com/TalkWelly" target="_blank" rel="noopener"></a>
-              </li>
-              <li class="social">
-                <a aria-hidden="true" class="icon fa-facebook" href="https://www.facebook.com/K%C5%8Drero-Wellington-114945545789718/" target="_blank" rel="noopener"></a>
-              </li>
-      
-              <li>
-                <div id="hide-mobile">
-                  <?php get_search_form(); ?>
-                </div>
-              </li>
-            </ul> 
-          </div>
+    <a class="home-link" href="https://talkwellington.org.nz"> 
 
-          <div class="mobile-head">
-            <div class="mobile-search">
-              <form class="" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
-                <div aria-hidden="true" class="icon fa-search"></div>       
-                <input type="text" value="" name="s" id="s" placeholder="Search..." aria-label="Search"/>
-              </form>            
-            </div>
-            <div id="slide-menu-button">
-              MENU
-            </div>
+      <div id="logo" class="logo">
+        <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('logo')) : else : ?>
+          <div class="pre-widget">
+            <p><strong>Logo Area</strong></p>
+            <p>This panel is for the Korero Wellington logo. Upload via the WordPress backend under "Widgets"</p>
           </div>
-        </div>
+        <?php endif; ?>
       </div>
-    </nav>     
 
-    <header>
-      <div class="row"> <!-- Logo and slider row -->
-        <div id="head-feature-area" class="col-sm-12">
-          <div id="logo">
-            <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('logo')) : else : ?>
-              <div class="pre-widget">
-                <p><strong>Logo Area</strong></p>
-                <p>This panel is active and ready for you to add some widgets via the WP Admin. Generally this will be the Korero Wellington logo</p>
-              </div>
-            <?php endif; 
-            ?>
-          </div>
-          <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('head-feature-area')) : else : ?>
-            <div class="pre-widget">
-              <p><strong>Hero Image Area</strong></p>
-              <p>This panel is active and ready for you to add some widgets via the WP Admin. Generally this will be Korero Wellingtons hero image slider</p>
-            </div>
-          <?php endif; ?>
+    </a>       
+    <div id="slide-menu-button">MENU</div>        
+    <div id="menu" class="menu">
+      <div id="x-button" class="icon fa-times text-right" aria-hidden="true"></div>
 
-        </div>  
+      <ul class="links">
+       <?php wp_list_pages('&title_li=')?>
+     </ul>
 
-      </div>
+     <ul class="social-search">
+      <li class="social"><a aria-hidden="true" class="icon fa-twitter" href="https://twitter.com/TalkWelly" target="_blank" rel="noopener"></a></li>
+      <li class="social"><a aria-hidden="true" class="icon fa-facebook" href="https://www.facebook.com/K%C5%8Drero-Wellington-114945545789718/" target="_blank" rel="noopener"></a></li>
+      <li class="social">
+        <?php get_search_form(); ?>     
+      </li>
+    </ul>
+  </div>   
+
+</nav>    
+
+

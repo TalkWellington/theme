@@ -1,4 +1,8 @@
-<?php get_header(); ?>   
+<?php
+/*
+Template Name: Archives
+*/
+get_header(); ?> 
 <div class="container-fluid container-body"> <!-- Container for whole page -->
 <header>  
 <div class="row start ">             
@@ -69,8 +73,13 @@
 
   <main class="row blog-main"> <!-- blog roll and categories -->
    <section class="col-sm-8 blog-roll pad-right-zero">
-    <h2 class="latest-post">Latest</h2>
+    <h2 class="latest-post">Results</h2>
     <div class="blog-list">
+
+    	<p>The following posts are filed under: <span class="search-result"><?php single_cat_title(); ?>.</span></p>
+
+
+
       <?php 
 
       if ( have_posts() ) :
@@ -97,7 +106,7 @@
     </div>
   </section><!-- the loop -->          
 
-<?php get_sidebar('sidebar'); ?>
+ <?php get_sidebar('sidebar'); ?>
 
 </main>
 <?php get_footer(); ?>

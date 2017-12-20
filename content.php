@@ -4,6 +4,6 @@
 	<p class="blog-post-meta"><?php the_author(); ?></a> | <?php the_date(); ?></a></p>
 
 	<?php the_excerpt(); ?>
-	<a href="<?php the_permalink(); ?>">Read More</a>
+	<a class="read-more" href="<?php the_permalink(); ?>">Read More</a>
 <!-- repeats for rest of the content in loop-->
 </div><!-- /.blog-post -->

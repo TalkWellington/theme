@@ -1,9 +1,9 @@
-<?php get_header(); ?>   
-<div class="container-fluid container-body"> <!-- Container for whole page -->
+<?php get_header(); ?>     
+ <div class="container-fluid container-body"> <!-- Container for whole page -->
 <header>  
 <div class="row start ">             
     <!-- // Define our WP Query Parameters -->
-    <?php $the_query = new WP_Query( 'posts_per_page=4' ); ?>
+    <?php $the_query = new WP_Query( 'posts_per_page=3' ); ?>
      
     <!-- // Start our WP Query -->
     <?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
@@ -19,18 +19,18 @@
           if ( has_post_thumbnail() ) {
             $featured_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
           }else{
-            $featured_image = 'https://talkwellington.org.nz/wp-content/uploads/2017/07/resized-optimised-to35percent-Porirua-train-station-mural-up-stairs-photo-jontynz.jpg';           
+            $featured_image = 'http://www.kiwiwise.co.nz/img/cache/photo/centreport-wellington-700--.jpg';
           }  
           
           if(0 == $the_query->current_post) {
 
 
-           echo '<div class="col-sm-12 feature-container">
+           echo '<div class="feature-container col-sm-12">
                     <a href= " '.$post_link.' " > 
                       <div class="top-feature col-sm-6" style="background:url('.$featured_image.') no-repeat center center; background-size: cover;" >
                       </div>
-                      <div class="col-sm-6 feature-titles">
-                             <h2 class="first-feature-title"> '.$post_title.'</h2>
+                      <div class="feature-titles col-sm-6">
+                             <h2> '.$post_title.'</h2>
                              <h3> by '.$post_author.'</h3>  
                              <p> '.$post_excerpt.' </p>      
                          
@@ -43,7 +43,7 @@
             
           } else {
             echo ' <a href= " '.$post_link.' " >
-                      <div class="col-sm-4 feature-container">
+                      <div class="feature-container col-sm-6">
                           <div class="small-feature"  style="background:url('.$featured_image.') no-repeat center center;   background-size: cover;" >
                           </div>    
                           <div class="feature-titles">
@@ -65,37 +65,16 @@
     ?>
 
   </div>  <!-- row second end -->
-</header>     
-
-  <main class="row blog-main"> <!-- blog roll and categories -->
+</header>  
+<main class="row blog-main"> <!-- blog roll and categories -->
    <section class="col-sm-8 blog-roll pad-right-zero">
-    <h2 class="latest-post">Latest</h2>
+    <h2 class="latest-post">Page Not Found</h2>
     <div class="blog-list">
-      <?php 
-
-      if ( have_posts() ) :
-         while ( have_posts() ) : the_post();
-     
-            get_template_part( 'content', get_post_format() );
-
-         endwhile; 
-
-        echo '<div class="page-links">
-                <div class="nav-previous alignleft">';
-                    next_posts_link( 'Older posts' );
-        echo '  </div>
-                 <div class="nav-next alignright">';
-                    previous_posts_link( 'Newer posts' );      
-        echo '  </div>
-              </div>';
-
-      endif; 
-
-      ?>
-
+    	<h2>Sorry, there was an error (404) finding that page.</h2>
+    	<p>Check the URL in the address bar is valid or try reloading the page.</p>
 
     </div>
-  </section><!-- the loop -->          
+  </section>  
 
 <?php get_sidebar('sidebar'); ?>
 
